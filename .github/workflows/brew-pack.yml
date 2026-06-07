@@ -1,8 +1,8 @@
 name: Brew
 
 on:
-  # push:
-  #   branches: [ brew ]
+  push:
+    branches: [ brew ]
   workflow_dispatch:
 
 jobs:
