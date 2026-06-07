@@ -2,7 +2,7 @@ name: Brew
 
 on:
   push:
-    branches: [ brew ]
+    branches: [ b1 ]
   workflow_dispatch:
 
 jobs:
@@ -10,21 +10,25 @@ jobs:
     runs-on: macos-15-intel
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v6
-
-      - name: Run build.sh
+      - name: Check
         run: |
-          chmod +x ./build.sh
-          ./build.sh
+          brew deps mpv
 
-      - name: Pack
-        run: |
-          tar --zstd -cvf brew.tar.zst /usr/local/Cellar /usr/local/opt
+      # - name: Checkout repo
+      #   uses: actions/checkout@v6
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: brew-packed
-          path: brew.tar.zst
-          archive: false
+      # - name: Run build.sh
+      #   run: |
+      #     chmod +x ./build.sh
+      #     ./build.sh
+
+      # - name: Pack
+      #   run: |
+      #     tar --zstd -cvf brew.tar.zst /usr/local/Cellar /usr/local/opt
+
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v7
+      #   with:
+      #     name: brew-packed
+      #     path: brew.tar.zst
+      #     archive: false
