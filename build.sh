@@ -6,4 +6,4 @@ sudo chown -R $USER /usr/local/Cellar
 chmod u+w /usr/local/Cellar
 
 export MACOSX_DEPLOYMENT_TARGET="13.0"
-brew --build-from-source install zstd
+brew install --build-from-source zstd
