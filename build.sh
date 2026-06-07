@@ -12,7 +12,14 @@ export CXXFLAGS="$CFLAGS"
 export LDFLAGS="$CFLAGS"
 # export CMAKE_OSX_ARCHITECTURES="x86_64"
 
+PATH="$PATH"
+
+brew analytics off
 brew install --build-from-source $(brew deps zstd) zstd
-sudo rm -r /usr/local/Cellar/cmake
 brew cleanup
 brew autoremove
+ls -al /usr/local/Cellar
+ls -al /usr/local/Cellar/cmake
+sudo rm -r /usr/local/Cellar/cmake
+
+# when reusing this, remember: zstd works in next task because it's reinstalled here 
