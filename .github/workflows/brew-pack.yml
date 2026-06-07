@@ -1,8 +1,8 @@
 name: Brew
 
 on:
-  push:
-    # branches: [ brew ]
+  # push:
+  #   branches: [ brew ]
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Pack
         run: |
-          tar --zstd -cvf brew.tar.zst /opt/local/Homebrew
+          tar --zstd -cvf brew.tar.zst /usr/local/Homebrew
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
