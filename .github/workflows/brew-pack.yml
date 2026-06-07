@@ -13,10 +13,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v6
 
-      - name: Run build.sh
-        run: |
-          chmod +x ./build.sh
-          ./build.sh
+      # - name: Run build.sh
+      #   run: |
+      #     chmod +x ./build.sh
+      #     ./build.sh
 
       - name: Pack
         run: |
