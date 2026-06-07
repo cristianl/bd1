@@ -1,4 +1,6 @@
 #!/bin/zsh
-ls -al ~
-ls -al /usr/local
+
+mv /usr/local/Cellar /usr/local/Cellar_bak
+mkdir /usr/local/Cellar
+
 brew install lz4
