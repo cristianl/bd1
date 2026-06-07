@@ -7,7 +7,7 @@ on:
 
 jobs:
   brew-pack:
-    runs-on: macos-15
+    runs-on: macos-15-intel
 
     steps:
       - name: Checkout repo
