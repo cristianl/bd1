@@ -6,5 +6,5 @@ sudo chown -R $USER /usr/local/Cellar
 chmod u+w /usr/local/Cellar
 
 export MACOSX_DEPLOYMENT_TARGET="13.0"
-brew install --only-dependencies --build-from-source zstd
-brew install --build-from-source zstd
+brew install --build-from-source $(brew deps zstd) zstd
+brew autoremove
