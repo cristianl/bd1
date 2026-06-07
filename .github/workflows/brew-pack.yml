@@ -1,0 +1,30 @@
+name: Brew
+
+on:
+  push:
+    # branches: [ brew ]
+  workflow_dispatch:
+
+jobs:
+  brew-pack:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Run build.sh
+        run: |
+          chmod +x ./build.sh
+          ./build.sh
+
+      - name: Pack
+        run: |
+          tar --zstd -cvf brew.tar.zst /opt/local/Homebrew
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: brew-packed
+          path: brew.tar.zst
+          archive: false
